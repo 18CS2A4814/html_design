@@ -1,0 +1,130 @@
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: black;
+    align-items:center;
+    min-height: 100vh;
+    padding:40px 0px;
+}
+
+h1{
+    color:white;
+    margin: 10px 0px;
+}
+.current-time{
+    padding:10px;
+    box-shadow: 0px 1px 5px green;
+    background: white;
+    font-size: 22px;
+    border-radius: 10px;
+}
+.set-alarm{
+    background-color: white;
+    margin:10px 0px;
+    padding:15px 10px;
+    border-radius: 8px;
+    width: 80%;
+    font-size: 22px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    gap:20px;
+}
+.quick-alarm {
+    position: relative;
+    display: flex;
+    /* justify-content: space-between; */
+}
+.quick-alarm i{
+    position: absolute;
+    right:10px;
+    width: 40%;
+}
+.quick-alarm i:after{
+    content:"\276F";
+    font-style: normal;
+    color:black;
+    position: absolute;
+    top:-8px;
+    right: 10px;
+    font-size: 30px;
+}
+
+
+.quick-alarm + ul{
+    display: none;
+    width: 100%;
+    box-shadow: 0px 1px 6px black;
+}
+.quick-alarm + ul li{
+    list-style: none;
+    padding:12px 6px;
+}
+.quick-alarm + ul li:hover{
+   background: lemonchiffon;
+    border-radius: 10px;
+}
+
+
+
+.alarm-list{
+    width: 80%;
+    background-color: white;
+    padding: 10px;
+    color:black;
+    border-radius: 8px;
+}
+.alarm-list > h1{
+    padding:4px 0px;
+    border-bottom: 2px solid red;
+    color:black;
+    text-align: center;
+
+}
+
+.alarm-list .alarms{
+    padding: 20px 5px;
+    box-shadow: 0px 2px 6px black;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    margin-top:15px;
+}
+.alarms button{
+    padding: 6px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    margin:10px 0px;
+}
+.alarm-calender input,.alarm-calender button{
+    display: block;
+    width:80%;
+    margin:10px auto;
+    padding: 10px;
+    font-size: 20px;
+}
+.alarm-calender p{
+    text-align: center;
+    border-bottom: 2px solid green;
+    padding: 4px;
+    margin:6px 0px;
+}
+.alarm-calender button{
+    width: 40%;
+    border-radius: 10px;
+    border: 1px solid black;
+    margin:auto;
+}
+.alarms h1{
+    color:black;
+}

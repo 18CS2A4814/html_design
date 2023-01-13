@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            min-height: 100vh;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container{
+            width: 50%;
+        }
+        .container input[type="text"],.container input[type='number']{
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin:4px 0px;
+        }
+        .container button{
+            display: block;
+            width: 40%;
+            padding: 10px;
+            margin:10px auto;
+            cursor: pointer;
+        }
+        legend,span,.results{
+            color:white;
+        }
+        input:focus{
+            outline-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="text" name="arr" placeholder="Enter numbers seperated by ," id="">
+        <input type="number" name="noofrotation" id="" placeholder="Enter the no of rotation to be performed" >
+       <fieldset>
+        <legend>Select Direction</legend>
+            <input type="radio" name="direction" id="" checked value="left"><span>Left</span>
+            <input type="radio" name="direction" id="" value="right"><span>Right</span>
+            
+       </fieldset>
+        <button id="submitBtn" onclick="rotate()">Sumbit</button>
+        <div class="results">
+
+        </div>
+    </div>
+    <script>
+        function rotate()
+        {
+            let radio=document.querySelectorAll("input[type='radio']");
+            var direction="right";
+            Array.from(radio).forEach((e)=>{
+                if(e.checked)
+                {
+                    direction=e.value;
+                }
+            })
+           let arr=document.querySelector("input[type='text']");
+           let times=document.querySelector("input[name='noofrotation']").value;
+           times=parseInt(times);
+           arr=arr.value.trim();
+           arr=arr.replace(/\s*/g,'');
+           let pattern=/^[0-9,]*$/g;
+           var newArr=[];
+           if(arr.match(pattern) && !isNaN(times) && times)
+           {
+            arr=arr.split(",");
+            console.log(arr)
+            arr=arr.filter((e)=>{
+                return e;
+            });
+            times=times%arr.length;
+            
+            if(direction=="right")
+            {
+                for(let i=arr.length-times;i<arr.length;i++)
+                {
+                    newArr.push(arr[i]);
+                }
+                for(let i=0;i<arr.length-times;i++)
+                {
+                    newArr.push(arr[i]);
+                }
+            }
+            else
+            {
+                for(let i=times;i<arr.length;i++)
+                {
+                    newArr.push(arr[i]);
+                }
+                for(let i=0;i<times;i++)
+                {
+                    newArr.push(arr[i]);
+                }
+            }
+           }
+           else
+           {
+            alert("invalid data");
+           }
+           document.querySelector(".results").innerHTML=`<h2>${direction} rotated array is: [ `+newArr.toString()+" ]</h2>";
+        }
+    </script>
+</body>
+</html>

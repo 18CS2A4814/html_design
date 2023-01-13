@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alarm Clock</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <audio src="./alarm.mp3" id="myAudio"></audio>
+    <h1>Your Clock</h1>
+    <div class="current-time">
+        
+    </div>
+    <div class="set-alarm">
+        <div class="quick-alarm">
+           <p> Set quick Alarm</p> <i class="quick-btn"></i>
+        </div>
+        <ul class="quick-alarm-list">
+            <li onclick="Alarm.setAlarm(2,'min')">2 Min</li>
+            <li onclick="Alarm.setAlarm(4,'min')">4 Min</li>
+            <li onclick="Alarm.setAlarm(6,'min')">6 Min</li>
+            <li onclick="Alarm.setAlarm(8,'min')">8 Min</li>
+            <li onclick="Alarm.setAlarm(10,'min')">10 Min</li>
+            <li onclick="Alarm.setAlarm(12,'min')">12 Min</li>
+        </ul>
+        <hr>
+        <div class="alarm-calender">
+            <form action="#" method="get">
+                <p>Set alarm with date & time</p>
+                <input type="date" name="" id="" required>
+                <input type="time" name="" id="" required>
+                <button onclick="Alarm.setAlarm(1,'date-time')">Add</button>
+            </form>
+        </div>
+    </div>
+    <div class="alarm-list">
+        <h1>Your Alarm</h1>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
